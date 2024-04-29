@@ -1,4 +1,4 @@
-#include <iostream>
+ï»¿#include <iostream>
 #include <Windows.h>
 #include <ctime>
 #include <chrono>
@@ -16,7 +16,7 @@ void loh() {
 	cin.clear();
 	cin.ignore(1000, '\n');
 	SetConsoleTextAttribute(handle, FOREGROUND_RED);
-	cout << "Îøèáêà ââîäà. Ïîæàëóéñòà, ïîâòîðèòå ïîïûòêó." << endl;
+	cout << "ÐžÑˆÐ¸Ð±ÐºÐ° Ð²Ð²Ð¾Ð´Ð°. ÐŸÐ¾Ð¶Ð°Ð»ÑƒÐ¹ÑÑ‚Ð°, Ð¿Ð¾Ð²Ñ‚Ð¾Ñ€Ð¸Ñ‚Ðµ Ð¿Ð¾Ð¿Ñ‹Ñ‚ÐºÑƒ." << endl;
 	SetConsoleTextAttribute(handle, FOREGROUND_BLUE | FOREGROUND_RED | FOREGROUND_GREEN);
 }
 
@@ -93,7 +93,7 @@ void showList(List * list) {
 
 	List* beg = list;
 	
-	cout << "\n\nÂàø ñïèñîê: \n\n";
+	cout << "\n\nÐ’Ð°Ñˆ ÑÐ¿Ð¸ÑÐ¾Ðº: \n\n";
 	
 	while (beg) {
 		
@@ -143,7 +143,7 @@ List* pushInto(int num, int index, List* list) {
 	
 	if (index >= lenght or index < 0) {
 		loh();
-		cout << "\n\nÁóäóùèé èíäåêñ íåêîððåêòåí :(";
+		cout << "\n\nÐ‘ÑƒÐ´ÑƒÑ‰Ð¸Ð¹ Ð¸Ð½Ð´ÐµÐºÑ Ð½ÐµÐºÐ¾Ñ€Ñ€ÐµÐºÑ‚ÐµÐ½ :(";
 	}
 
 
@@ -196,7 +196,7 @@ int getElementByIndex(int index, List* list) {
 
 	if (index >= lenghtOfList(list) or index < 0) {
 		loh();
-		cout << "\n\nÝëåìåíòà ñ òàêèì èíäåêñîì íå ñóùåñòâóåò :(";
+		cout << "\n\nÐ­Ð»ÐµÐ¼ÐµÐ½Ñ‚Ð° Ñ Ñ‚Ð°ÐºÐ¸Ð¼ Ð¸Ð½Ð´ÐµÐºÑÐ¾Ð¼ Ð½Ðµ ÑÑƒÑ‰ÐµÑÑ‚Ð²ÑƒÐµÑ‚ :(";
 		return -1;
 	}
 
@@ -240,7 +240,7 @@ List* deleteByIndex(int index, List* list) {
 
 	if (index >= lenght or index<0) {
 		loh();
-		cout << "\n\nÝëåìåíòà ñ òàêèì èíäåêñîì íå ñóùåñòâóåò :(";
+		cout << "\n\nÐ­Ð»ÐµÐ¼ÐµÐ½Ñ‚Ð° Ñ Ñ‚Ð°ÐºÐ¸Ð¼ Ð¸Ð½Ð´ÐµÐºÑÐ¾Ð¼ Ð½Ðµ ÑÑƒÑ‰ÐµÑÑ‚Ð²ÑƒÐµÑ‚ :(";
 		
 	}
 
@@ -300,7 +300,7 @@ List* deleteByValue(int num, List* list) {
 	}
 
 	if (delItem == 0) {
-		cout << "\n\nÝëåìåíòà ñ òàêèì çíà÷åíèåì íå ñóùåñòâóåò :(";
+		cout << "\n\nÐ­Ð»ÐµÐ¼ÐµÐ½Ñ‚Ð° Ñ Ñ‚Ð°ÐºÐ¸Ð¼ Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸ÐµÐ¼ Ð½Ðµ ÑÑƒÑ‰ÐµÑÑ‚Ð²ÑƒÐµÑ‚ :(";
 		loh();
 		return list;
 	}
@@ -536,20 +536,20 @@ int main() {
 
 	time_point<steady_clock, duration<__int64, ratio<1, 1000000000>>>start, end;
 
-	cout << "\n\nÄîáðîãî âðåìåíè ñóòîê!!";
+	cout << "\n\nÐ”Ð¾Ð±Ñ€Ð¾Ð³Ð¾ Ð²Ñ€ÐµÐ¼ÐµÐ½Ð¸ ÑÑƒÑ‚Ð¾Ðº!!";
 
 	while (menuChoose != -1) {
 		SetConsoleTextAttribute(handle, FOREGROUND_BLUE | FOREGROUND_RED );
-		cout << "\n\nÂûáåðèòå ïóíêò â ìåíþ è ââåäèòå ñîîòâåòñòâóþùóþ öèôðó:";
-		cout << "\n1. Ñîçäàòü äâóñâÿçíûé ñïèñîê."\
-			"\n2. Âñòàâèòü ýëåìåíò â ñóùåñòâóþùèé ñïèñîê."\
-			"\n3. Óäàëèòü ýëåìåíò èç ñïèñêà."\
-			"\n4. Îáìåí ýëåìåíòîâ â ñïèñêå."\
-			"\n5. Ïîëó÷åíèå ýëåìåíòà ñïèñêà."\
+		cout << "\n\nÐ’Ñ‹Ð±ÐµÑ€Ð¸Ñ‚Ðµ Ð¿ÑƒÐ½ÐºÑ‚ Ð² Ð¼ÐµÐ½ÑŽ Ð¸ Ð²Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÑÐ¾Ð¾Ñ‚Ð²ÐµÑ‚ÑÑ‚Ð²ÑƒÑŽÑ‰ÑƒÑŽ Ñ†Ð¸Ñ„Ñ€Ñƒ:";
+		cout << "\n1. Ð¡Ð¾Ð·Ð´Ð°Ñ‚ÑŒ Ð´Ð²ÑƒÑÐ²ÑÐ·Ð½Ñ‹Ð¹ ÑÐ¿Ð¸ÑÐ¾Ðº."\
+			"\n2. Ð’ÑÑ‚Ð°Ð²Ð¸Ñ‚ÑŒ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚ Ð² ÑÑƒÑ‰ÐµÑÑ‚Ð²ÑƒÑŽÑ‰Ð¸Ð¹ ÑÐ¿Ð¸ÑÐ¾Ðº."\
+			"\n3. Ð£Ð´Ð°Ð»Ð¸Ñ‚ÑŒ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚ Ð¸Ð· ÑÐ¿Ð¸ÑÐºÐ°."\
+			"\n4. ÐžÐ±Ð¼ÐµÐ½ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð¾Ð² Ð² ÑÐ¿Ð¸ÑÐºÐµ."\
+			"\n5. ÐŸÐ¾Ð»ÑƒÑ‡ÐµÐ½Ð¸Ðµ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð° ÑÐ¿Ð¸ÑÐºÐ°."\
 			"\n6. IDZ."\
-			"\n7. Âûõîä èç ïðîãðàììû.";
+			"\n7. Ð’Ñ‹Ñ…Ð¾Ð´ Ð¸Ð· Ð¿Ñ€Ð¾Ð³Ñ€Ð°Ð¼Ð¼Ñ‹.";
 		SetConsoleTextAttribute(handle, FOREGROUND_BLUE | FOREGROUND_RED | FOREGROUND_GREEN);
-			cout<<"\n\nÂàø âûáîð: ";
+			cout<<"\n\nÐ’Ð°Ñˆ Ð²Ñ‹Ð±Ð¾Ñ€: ";
 
 
 		cin >> menuChoose;
@@ -563,9 +563,9 @@ int main() {
 			case 1: {
 				int createChoose;
 
-				cout << "\n\nÊàêîé ðàçìåð áóäåò ó ñïèñêà è êàêèå çíà÷åíèÿ ïðèìóò ýëåìåíòû ñïèñêà?"\
-					"\n1. Ñïèñîê, ðàçìåð êîòîðîãî âû îïðåäåëèòå ñàìè, à ìû çàïîëíèì åãî ñëó÷àéíûìè çíà÷åíèÿìè â äèàïîçîíå îò 0 äî 99"\
-					"\n2. Âû ââåä¸òå ìíîãî öèôð, à ìû ñàìè îïðåäåëèì èõ êîëè÷åñòâî è ñîçäàäèì ïîäõîäÿùèé ñïèñîê ñ ýòèìè öèôîðêàìè \n\nÂàø âûáîð: ";
+				cout << "\n\nÐšÐ°ÐºÐ¾Ð¹ Ñ€Ð°Ð·Ð¼ÐµÑ€ Ð±ÑƒÐ´ÐµÑ‚ Ñƒ ÑÐ¿Ð¸ÑÐºÐ° Ð¸ ÐºÐ°ÐºÐ¸Ðµ Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ñ Ð¿Ñ€Ð¸Ð¼ÑƒÑ‚ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ñ‹ ÑÐ¿Ð¸ÑÐºÐ°?"\
+					"\n1. Ð¡Ð¿Ð¸ÑÐ¾Ðº, Ñ€Ð°Ð·Ð¼ÐµÑ€ ÐºÐ¾Ñ‚Ð¾Ñ€Ð¾Ð³Ð¾ Ð²Ñ‹ Ð¾Ð¿Ñ€ÐµÐ´ÐµÐ»Ð¸Ñ‚Ðµ ÑÐ°Ð¼Ð¸, Ð° Ð¼Ñ‹ Ð·Ð°Ð¿Ð¾Ð»Ð½Ð¸Ð¼ ÐµÐ³Ð¾ ÑÐ»ÑƒÑ‡Ð°Ð¹Ð½Ñ‹Ð¼Ð¸ Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸ÑÐ¼Ð¸ Ð² Ð´Ð¸Ð°Ð¿Ð¾Ð·Ð¾Ð½Ðµ Ð¾Ñ‚ 0 Ð´Ð¾ 99"\
+					"\n2. Ð’Ñ‹ Ð²Ð²ÐµÐ´Ñ‘Ñ‚Ðµ Ð¼Ð½Ð¾Ð³Ð¾ Ñ†Ð¸Ñ„Ñ€, Ð° Ð¼Ñ‹ ÑÐ°Ð¼Ð¸ Ð¾Ð¿Ñ€ÐµÐ´ÐµÐ»Ð¸Ð¼ Ð¸Ñ… ÐºÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð¾ Ð¸ ÑÐ¾Ð·Ð´Ð°Ð´Ð¸Ð¼ Ð¿Ð¾Ð´Ñ…Ð¾Ð´ÑÑ‰Ð¸Ð¹ ÑÐ¿Ð¸ÑÐ¾Ðº Ñ ÑÑ‚Ð¸Ð¼Ð¸ Ñ†Ð¸Ñ„Ð¾Ñ€ÐºÐ°Ð¼Ð¸ \n\nÐ’Ð°Ñˆ Ð²Ñ‹Ð±Ð¾Ñ€: ";
 				cin >> createChoose;
 
 				switch (createChoose) {
@@ -582,13 +582,13 @@ int main() {
 
 						int N;
 
-						cout << "\n\nÂâåäèòå êîëè÷åñòâî ýëåìåíòîâ â ñïèñêå: ";
+						cout << "\n\nÐ’Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÐºÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð¾ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð¾Ð² Ð² ÑÐ¿Ð¸ÑÐºÐµ: ";
 						cin >> N;
 
 						while (isdigit(N)) {
 
 							loh();
-							cout << "\n\nÂâåäèòå êîëè÷åñòâî ýëåìåíòîâ â ñïèñêå: ";
+							cout << "\n\nÐ’Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÐºÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð¾ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð¾Ð² Ð² ÑÐ¿Ð¸ÑÐºÐµ: ";
 							cin >> N;
 						}
 
@@ -613,7 +613,7 @@ int main() {
 						showList(list);
 						listExist = true;
 						SetConsoleTextAttribute(handle, FOREGROUND_BLUE | FOREGROUND_GREEN);
-						cout << "\n\nÄëÿ äâóñâÿçíîãî ñïèñêà ýòà îïåðàöèÿ ïðîøëà çà " << listTime << " íàíîñåêóíä, äëÿ äèíàìè÷åñêîãî ìàññèâà ïîòðåáîâàëîñü áû " << arrayTime;
+						cout << "\n\nÐ”Ð»Ñ Ð´Ð²ÑƒÑÐ²ÑÐ·Ð½Ð¾Ð³Ð¾ ÑÐ¿Ð¸ÑÐºÐ° ÑÑ‚Ð° Ð¾Ð¿ÐµÑ€Ð°Ñ†Ð¸Ñ Ð¿Ñ€Ð¾ÑˆÐ»Ð° Ð·Ð° " << listTime << " Ð½Ð°Ð½Ð¾ÑÐµÐºÑƒÐ½Ð´, Ð´Ð»Ñ Ð´Ð¸Ð½Ð°Ð¼Ð¸Ñ‡ÐµÑÐºÐ¾Ð³Ð¾ Ð¼Ð°ÑÑÐ¸Ð²Ð° Ð¿Ð¾Ñ‚Ñ€ÐµÐ±Ð¾Ð²Ð°Ð»Ð¾ÑÑŒ Ð±Ñ‹ " << arrayTime;
 						SetConsoleTextAttribute(handle, FOREGROUND_BLUE | FOREGROUND_RED | FOREGROUND_GREEN);
 
 						list->down->down = list;
@@ -628,7 +628,7 @@ int main() {
 							deleteList(list);
 						}
 
-						cout << "\n\nÂâåäèòå öèôîðêè ÷åðåç ïðîáåë: ";
+						cout << "\n\nÐ’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ñ†Ð¸Ñ„Ð¾Ñ€ÐºÐ¸ Ñ‡ÐµÑ€ÐµÐ· Ð¿Ñ€Ð¾Ð±ÐµÐ»: ";
 
 						list = userValueCreateList();
 
@@ -657,7 +657,7 @@ int main() {
 
 				if (!listExist) {
 
-					cout << "\n\n Ñíà÷àëà ñîçäàéòå ñïèñîê!!";
+					cout << "\n\n Ð¡Ð½Ð°Ñ‡Ð°Ð»Ð° ÑÐ¾Ð·Ð´Ð°Ð¹Ñ‚Ðµ ÑÐ¿Ð¸ÑÐ¾Ðº!!";
 					break;
 				}
 
@@ -666,12 +666,12 @@ int main() {
 				bool error = true;
 
 				while (error) {
-					cout << "\n\n Ââåäèòå áóäóùèé èíäåêñ ýëåìåíòà: ";
+					cout << "\n\n Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð±ÑƒÐ´ÑƒÑ‰Ð¸Ð¹ Ð¸Ð½Ð´ÐµÐºÑ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð°: ";
 					cin >> pushIntoChoose;
 
 					if (pushIntoChoose == 0) {
 						error = false;
-						cout << "\n\nÂâåäèòå çíà÷åíèå, êîòîðîå âû õîòèòå âñòàâèòü: ";
+						cout << "\n\nÐ’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ðµ, ÐºÐ¾Ñ‚Ð¾Ñ€Ð¾Ðµ Ð²Ñ‹ Ñ…Ð¾Ñ‚Ð¸Ñ‚Ðµ Ð²ÑÑ‚Ð°Ð²Ð¸Ñ‚ÑŒ: ";
 						cin >> num;
 						
 						start = steady_clock::now();
@@ -691,7 +691,7 @@ int main() {
 						arrayTime = duration_cast<nanoseconds>(end - start).count();
 
 						SetConsoleTextAttribute(handle, FOREGROUND_BLUE | FOREGROUND_GREEN);
-						cout << "\n\nÄëÿ äâóñâÿçíîãî ñïèñêà ýòà îïåðàöèÿ ïðîøëà çà " << listTime << " íàíîñåêóíä, äëÿ äèíàìè÷åñêîãî ìàññèâà ïîòðåáîâàëîñü áû " << arrayTime;
+						cout << "\n\nÐ”Ð»Ñ Ð´Ð²ÑƒÑÐ²ÑÐ·Ð½Ð¾Ð³Ð¾ ÑÐ¿Ð¸ÑÐºÐ° ÑÑ‚Ð° Ð¾Ð¿ÐµÑ€Ð°Ñ†Ð¸Ñ Ð¿Ñ€Ð¾ÑˆÐ»Ð° Ð·Ð° " << listTime << " Ð½Ð°Ð½Ð¾ÑÐµÐºÑƒÐ½Ð´, Ð´Ð»Ñ Ð´Ð¸Ð½Ð°Ð¼Ð¸Ñ‡ÐµÑÐºÐ¾Ð³Ð¾ Ð¼Ð°ÑÑÐ¸Ð²Ð° Ð¿Ð¾Ñ‚Ñ€ÐµÐ±Ð¾Ð²Ð°Ð»Ð¾ÑÑŒ Ð±Ñ‹ " << arrayTime;
 						SetConsoleTextAttribute(handle, FOREGROUND_BLUE | FOREGROUND_RED | FOREGROUND_GREEN);
 						
 					}
@@ -708,7 +708,7 @@ int main() {
 
 								clearStream();
 								error = false;
-								cout << "\n\nÂâåäèòå çíà÷åíèå, êîòîðîå âû õîòèòå âñòàâèòü: ";
+								cout << "\n\nÐ’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ðµ, ÐºÐ¾Ñ‚Ð¾Ñ€Ð¾Ðµ Ð²Ñ‹ Ñ…Ð¾Ñ‚Ð¸Ñ‚Ðµ Ð²ÑÑ‚Ð°Ð²Ð¸Ñ‚ÑŒ: ";
 								cin >> num;
 								
 								start = steady_clock::now();
@@ -728,7 +728,7 @@ int main() {
 								arrayTime = duration_cast<nanoseconds>(end - start).count();
 
 								SetConsoleTextAttribute(handle, FOREGROUND_BLUE |  FOREGROUND_GREEN);
-								cout << "\n\nÄëÿ äâóñâÿçíîãî ñïèñêà ýòà îïåðàöèÿ ïðîøëà çà " << listTime << " íàíîñåêóíä, äëÿ äèíàìè÷åñêîãî ìàññèâà ïîòðåáîâàëîñü áû " << arrayTime;
+								cout << "\n\nÐ”Ð»Ñ Ð´Ð²ÑƒÑÐ²ÑÐ·Ð½Ð¾Ð³Ð¾ ÑÐ¿Ð¸ÑÐºÐ° ÑÑ‚Ð° Ð¾Ð¿ÐµÑ€Ð°Ñ†Ð¸Ñ Ð¿Ñ€Ð¾ÑˆÐ»Ð° Ð·Ð° " << listTime << " Ð½Ð°Ð½Ð¾ÑÐµÐºÑƒÐ½Ð´, Ð´Ð»Ñ Ð´Ð¸Ð½Ð°Ð¼Ð¸Ñ‡ÐµÑÐºÐ¾Ð³Ð¾ Ð¼Ð°ÑÑÐ¸Ð²Ð° Ð¿Ð¾Ñ‚Ñ€ÐµÐ±Ð¾Ð²Ð°Ð»Ð¾ÑÑŒ Ð±Ñ‹ " << arrayTime;
 								SetConsoleTextAttribute(handle, FOREGROUND_BLUE | FOREGROUND_RED | FOREGROUND_GREEN);
 
 							}break;
@@ -743,13 +743,13 @@ int main() {
 
 				if (!listExist) {
 
-					cout << "\n\n Ñíà÷àëà ñîçäàéòå ñïèñîê!!";
+					cout << "\n\n Ð¡Ð½Ð°Ñ‡Ð°Ð»Ð° ÑÐ¾Ð·Ð´Ð°Ð¹Ñ‚Ðµ ÑÐ¿Ð¸ÑÐ¾Ðº!!";
 					break;
 				}
 
 				int deleteChoose, deleteID;
 
-				cout << "\n\nÊàê âû áóäåòå óäàëÿòü ýëåìåíò?\n1. Ïî èíäåêñó\n2. Ïî çíà÷åíèþ\nÂàø âûáîð:";
+				cout << "\n\nÐšÐ°Ðº Ð²Ñ‹ Ð±ÑƒÐ´ÐµÑ‚Ðµ ÑƒÐ´Ð°Ð»ÑÑ‚ÑŒ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚?\n1. ÐŸÐ¾ Ð¸Ð½Ð´ÐµÐºÑÑƒ\n2. ÐŸÐ¾ Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸ÑŽ\nÐ’Ð°Ñˆ Ð²Ñ‹Ð±Ð¾Ñ€:";
 				cin >> deleteChoose;
 
 				switch (deleteChoose) {
@@ -759,9 +759,9 @@ int main() {
 
 				case 1: {
 					showList(list);
-					cout << "\n\nÂâåäèòå èíäåêñ ýëåìåíòà, êîòîðûé âû õîòèòå óäàëèòü";
+					cout << "\n\nÐ’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð¸Ð½Ð´ÐµÐºÑ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð°, ÐºÐ¾Ñ‚Ð¾Ñ€Ñ‹Ð¹ Ð²Ñ‹ Ñ…Ð¾Ñ‚Ð¸Ñ‚Ðµ ÑƒÐ´Ð°Ð»Ð¸Ñ‚ÑŒ";
 					SetConsoleTextAttribute(handle, FOREGROUND_RED | FOREGROUND_GREEN);
-					cout << "(Èíäåêñàöèÿ íà÷èíàåòñÿ ñ íóëÿ) : ";
+					cout << "(Ð˜Ð½Ð´ÐµÐºÑÐ°Ñ†Ð¸Ñ Ð½Ð°Ñ‡Ð¸Ð½Ð°ÐµÑ‚ÑÑ Ñ Ð½ÑƒÐ»Ñ) : ";
 					SetConsoleTextAttribute(handle, FOREGROUND_BLUE | FOREGROUND_RED | FOREGROUND_GREEN);
 					cin >> deleteID;
 
@@ -782,7 +782,7 @@ int main() {
 					arrayTime = duration_cast<nanoseconds>(end - start).count();
 
 					SetConsoleTextAttribute(handle, FOREGROUND_BLUE | FOREGROUND_GREEN);
-					cout << "\n\nÄëÿ äâóñâÿçíîãî ñïèñêà ýòà îïåðàöèÿ ïðîøëà çà " << listTime << " íàíîñåêóíä, äëÿ äèíàìè÷åñêîãî ìàññèâà ïîòðåáîâàëîñü áû " << arrayTime;
+					cout << "\n\nÐ”Ð»Ñ Ð´Ð²ÑƒÑÐ²ÑÐ·Ð½Ð¾Ð³Ð¾ ÑÐ¿Ð¸ÑÐºÐ° ÑÑ‚Ð° Ð¾Ð¿ÐµÑ€Ð°Ñ†Ð¸Ñ Ð¿Ñ€Ð¾ÑˆÐ»Ð° Ð·Ð° " << listTime << " Ð½Ð°Ð½Ð¾ÑÐµÐºÑƒÐ½Ð´, Ð´Ð»Ñ Ð´Ð¸Ð½Ð°Ð¼Ð¸Ñ‡ÐµÑÐºÐ¾Ð³Ð¾ Ð¼Ð°ÑÑÐ¸Ð²Ð° Ð¿Ð¾Ñ‚Ñ€ÐµÐ±Ð¾Ð²Ð°Ð»Ð¾ÑÑŒ Ð±Ñ‹ " << arrayTime;
 					SetConsoleTextAttribute(handle, FOREGROUND_BLUE | FOREGROUND_RED | FOREGROUND_GREEN);
 
 				}break;
@@ -790,7 +790,7 @@ int main() {
 				case 2: {
 
 					showList(list);
-					cout << "\n\nÂâåäèòå çíà÷åíèå ýëåìåíòà, êîòîðûé âû õîòèòå óäàëèòü: ";
+					cout << "\n\nÐ’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ðµ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð°, ÐºÐ¾Ñ‚Ð¾Ñ€Ñ‹Ð¹ Ð²Ñ‹ Ñ…Ð¾Ñ‚Ð¸Ñ‚Ðµ ÑƒÐ´Ð°Ð»Ð¸Ñ‚ÑŒ: ";
 					cin >> deleteID;
 
 					start = steady_clock::now();
@@ -810,7 +810,7 @@ int main() {
 					arrayTime = duration_cast<nanoseconds>(end - start).count();
 
 					SetConsoleTextAttribute(handle, FOREGROUND_BLUE  | FOREGROUND_GREEN);
-					cout << "\n\nÄëÿ äâóñâÿçíîãî ñïèñêà ýòà îïåðàöèÿ ïðîøëà çà " << listTime << " íàíîñåêóíä, äëÿ äèíàìè÷åñêîãî ìàññèâà ïîòðåáîâàëîñü áû " << arrayTime;
+					cout << "\n\nÐ”Ð»Ñ Ð´Ð²ÑƒÑÐ²ÑÐ·Ð½Ð¾Ð³Ð¾ ÑÐ¿Ð¸ÑÐºÐ° ÑÑ‚Ð° Ð¾Ð¿ÐµÑ€Ð°Ñ†Ð¸Ñ Ð¿Ñ€Ð¾ÑˆÐ»Ð° Ð·Ð° " << listTime << " Ð½Ð°Ð½Ð¾ÑÐµÐºÑƒÐ½Ð´, Ð´Ð»Ñ Ð´Ð¸Ð½Ð°Ð¼Ð¸Ñ‡ÐµÑÐºÐ¾Ð³Ð¾ Ð¼Ð°ÑÑÐ¸Ð²Ð° Ð¿Ð¾Ñ‚Ñ€ÐµÐ±Ð¾Ð²Ð°Ð»Ð¾ÑÑŒ Ð±Ñ‹ " << arrayTime;
 					SetConsoleTextAttribute(handle, FOREGROUND_BLUE | FOREGROUND_RED | FOREGROUND_GREEN);
 
 				}break;
@@ -825,15 +825,15 @@ int main() {
 			case 4: {
 				if (!listExist) {
 
-					cout << "\n\n Ñíà÷àëà ñîçäàéòå ñïèñîê!!";
+					cout << "\n\n Ð¡Ð½Ð°Ñ‡Ð°Ð»Ð° ÑÐ¾Ð·Ð´Ð°Ð¹Ñ‚Ðµ ÑÐ¿Ð¸ÑÐ¾Ðº!!";
 					break;
 				}
 
 				int firstIndex, secondIndex;
-				cout << "\n\nÂâîäèòå èíäåêñû â ïîðÿäêå âîçðàñòàíèÿ!!";
-				cout << "\n\nÂâåäèòå èíäåêñ ïåðâîãî ýëåìåíòà: ";
+				cout << "\n\nÐ’Ð²Ð¾Ð´Ð¸Ñ‚Ðµ Ð¸Ð½Ð´ÐµÐºÑÑ‹ Ð² Ð¿Ð¾Ñ€ÑÐ´ÐºÐµ Ð²Ð¾Ð·Ñ€Ð°ÑÑ‚Ð°Ð½Ð¸Ñ!!";
+				cout << "\n\nÐ’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð¸Ð½Ð´ÐµÐºÑ Ð¿ÐµÑ€Ð²Ð¾Ð³Ð¾ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð°: ";
 				cin >> firstIndex;
-				cout << "\n\nÂâåäèòå èíäåêñ âòîðîãî ýëåìåíòà: ";
+				cout << "\n\nÐ’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð¸Ð½Ð´ÐµÐºÑ Ð²Ñ‚Ð¾Ñ€Ð¾Ð³Ð¾ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð°: ";
 				cin >> secondIndex;
 				if (firstIndex > secondIndex) { swap(firstIndex, secondIndex); }
 
@@ -854,19 +854,19 @@ int main() {
 				arrayTime = duration_cast<nanoseconds>(end - start).count();
 
 				SetConsoleTextAttribute(handle, FOREGROUND_BLUE |  FOREGROUND_GREEN);
-				cout << "\n\nÄëÿ äâóñâÿçíîãî ñïèñêà ýòà îïåðàöèÿ ïðîøëà çà " << listTime << " íàíîñåêóíä, äëÿ äèíàìè÷åñêîãî ìàññèâà ïîòðåáîâàëîñü áû " << arrayTime;
+				cout << "\n\nÐ”Ð»Ñ Ð´Ð²ÑƒÑÐ²ÑÐ·Ð½Ð¾Ð³Ð¾ ÑÐ¿Ð¸ÑÐºÐ° ÑÑ‚Ð° Ð¾Ð¿ÐµÑ€Ð°Ñ†Ð¸Ñ Ð¿Ñ€Ð¾ÑˆÐ»Ð° Ð·Ð° " << listTime << " Ð½Ð°Ð½Ð¾ÑÐµÐºÑƒÐ½Ð´, Ð´Ð»Ñ Ð´Ð¸Ð½Ð°Ð¼Ð¸Ñ‡ÐµÑÐºÐ¾Ð³Ð¾ Ð¼Ð°ÑÑÐ¸Ð²Ð° Ð¿Ð¾Ñ‚Ñ€ÐµÐ±Ð¾Ð²Ð°Ð»Ð¾ÑÑŒ Ð±Ñ‹ " << arrayTime;
 				SetConsoleTextAttribute(handle, FOREGROUND_BLUE | FOREGROUND_RED | FOREGROUND_GREEN);
 			}break;
 
 			case 5: {
 				if (!listExist) {
 
-					cout << "\n\n Ñíà÷àëà ñîçäàéòå ñïèñîê!!";
+					cout << "\n\n Ð¡Ð½Ð°Ñ‡Ð°Ð»Ð° ÑÐ¾Ð·Ð´Ð°Ð¹Ñ‚Ðµ ÑÐ¿Ð¸ÑÐ¾Ðº!!";
 					break;
 				}
 				int getChoose;
 				int index;
-				cout << "\n\n×òî âû õîòèòå ïîëó÷èòü?\n1. Çíà÷åíèå ïî èíäåêñó\n2. Èíäåêñ ïî çíà÷åíèþ\n\nÂàø âûáîð: ";
+				cout << "\n\nÐ§Ñ‚Ð¾ Ð²Ñ‹ Ñ…Ð¾Ñ‚Ð¸Ñ‚Ðµ Ð¿Ð¾Ð»ÑƒÑ‡Ð¸Ñ‚ÑŒ?\n1. Ð—Ð½Ð°Ñ‡ÐµÐ½Ð¸Ðµ Ð¿Ð¾ Ð¸Ð½Ð´ÐµÐºÑÑƒ\n2. Ð˜Ð½Ð´ÐµÐºÑ Ð¿Ð¾ Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸ÑŽ\n\nÐ’Ð°Ñˆ Ð²Ñ‹Ð±Ð¾Ñ€: ";
 				cin >> getChoose;
 				switch (getChoose) {
 				case (!isdigit): {
@@ -876,7 +876,7 @@ int main() {
 				case 1: {
 
 
-					cout << "\n\nÂâåäèòå èíäåêñ: ";
+					cout << "\n\nÐ’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð¸Ð½Ð´ÐµÐºÑ: ";
 					cin >> index;
 
 					start = steady_clock::now();
@@ -884,7 +884,7 @@ int main() {
 					getElementByIndex(index, list);
 
 					end = steady_clock::now();
-					cout << "\n\nÇíà÷åíèå ïî ýòîìó èíäåêñó: " << getElementByIndex(index, list);
+					cout << "\n\nÐ—Ð½Ð°Ñ‡ÐµÐ½Ð¸Ðµ Ð¿Ð¾ ÑÑ‚Ð¾Ð¼Ñƒ Ð¸Ð½Ð´ÐµÐºÑÑƒ: " << getElementByIndex(index, list);
 					listTime = duration_cast<nanoseconds>(end - start).count();
 					
 					start = steady_clock::now();
@@ -895,14 +895,14 @@ int main() {
 					arrayTime = duration_cast<nanoseconds>(end - start).count();
 
 					SetConsoleTextAttribute(handle, FOREGROUND_BLUE | FOREGROUND_GREEN);
-					cout << "\n\nÄëÿ äâóñâÿçíîãî ñïèñêà ýòà îïåðàöèÿ ïðîøëà çà " << listTime << " íàíîñåêóíä, äëÿ äèíàìè÷åñêîãî ìàññèâà ïîòðåáîâàëîñü áû " << arrayTime;
+					cout << "\n\nÐ”Ð»Ñ Ð´Ð²ÑƒÑÐ²ÑÐ·Ð½Ð¾Ð³Ð¾ ÑÐ¿Ð¸ÑÐºÐ° ÑÑ‚Ð° Ð¾Ð¿ÐµÑ€Ð°Ñ†Ð¸Ñ Ð¿Ñ€Ð¾ÑˆÐ»Ð° Ð·Ð° " << listTime << " Ð½Ð°Ð½Ð¾ÑÐµÐºÑƒÐ½Ð´, Ð´Ð»Ñ Ð´Ð¸Ð½Ð°Ð¼Ð¸Ñ‡ÐµÑÐºÐ¾Ð³Ð¾ Ð¼Ð°ÑÑÐ¸Ð²Ð° Ð¿Ð¾Ñ‚Ñ€ÐµÐ±Ð¾Ð²Ð°Ð»Ð¾ÑÑŒ Ð±Ñ‹ " << arrayTime;
 					SetConsoleTextAttribute(handle, FOREGROUND_BLUE | FOREGROUND_RED | FOREGROUND_GREEN);
 
 				}break;
 
 				case 2: {
 					showList(list);
-					cout << "\n\nÂâåäèòå çíà÷åíèå: ";
+					cout << "\n\nÐ’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ðµ: ";
 					cin >> index;
 
 					start = steady_clock::now();
@@ -911,7 +911,7 @@ int main() {
 					
 					end = steady_clock::now();
 					listTime = duration_cast<nanoseconds>(end - start).count();
-					cout <<"\n\nÈíäåêñ, ñîîòâåòñòâóþùèé ýòîìó çíà÷åíèþ: "<< getElementByValue(index, list);
+					cout <<"\n\nÐ˜Ð½Ð´ÐµÐºÑ, ÑÐ¾Ð¾Ñ‚Ð²ÐµÑ‚ÑÑ‚Ð²ÑƒÑŽÑ‰Ð¸Ð¹ ÑÑ‚Ð¾Ð¼Ñƒ Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸ÑŽ: "<< getElementByValue(index, list);
 
 					start = steady_clock::now();
 					
@@ -921,7 +921,7 @@ int main() {
 					arrayTime = duration_cast<nanoseconds>(end - start).count();
 
 					SetConsoleTextAttribute(handle, FOREGROUND_BLUE | FOREGROUND_GREEN);
-					cout << "\n\nÄëÿ äâóñâÿçíîãî ñïèñêà ýòà îïåðàöèÿ ïðîøëà çà " << listTime << " íàíîñåêóíä, äëÿ äèíàìè÷åñêîãî ìàññèâà ïîòðåáîâàëîñü áû " << arrayTime;
+					cout << "\n\nÐ”Ð»Ñ Ð´Ð²ÑƒÑÐ²ÑÐ·Ð½Ð¾Ð³Ð¾ ÑÐ¿Ð¸ÑÐºÐ° ÑÑ‚Ð° Ð¾Ð¿ÐµÑ€Ð°Ñ†Ð¸Ñ Ð¿Ñ€Ð¾ÑˆÐ»Ð° Ð·Ð° " << listTime << " Ð½Ð°Ð½Ð¾ÑÐµÐºÑƒÐ½Ð´, Ð´Ð»Ñ Ð´Ð¸Ð½Ð°Ð¼Ð¸Ñ‡ÐµÑÐºÐ¾Ð³Ð¾ Ð¼Ð°ÑÑÐ¸Ð²Ð° Ð¿Ð¾Ñ‚Ñ€ÐµÐ±Ð¾Ð²Ð°Ð»Ð¾ÑÑŒ Ð±Ñ‹ " << arrayTime;
 					SetConsoleTextAttribute(handle, FOREGROUND_BLUE | FOREGROUND_RED | FOREGROUND_GREEN);
 
 				}break;
@@ -929,7 +929,7 @@ int main() {
 			}break;
 
 			case 6: {
-				cout << "\n\n×åòíûõ ýëåìåíòîâ ïîä ÷åòíûìè èíäåêñàìè: " << listChetnie(list) << ", íå÷åòíûõ ïîä íå÷åòíûìè: " << listNechetnie(list);
+				cout << "\n\nÐ§ÐµÑ‚Ð½Ñ‹Ñ… ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð¾Ð² Ð¿Ð¾Ð´ Ñ‡ÐµÑ‚Ð½Ñ‹Ð¼Ð¸ Ð¸Ð½Ð´ÐµÐºÑÐ°Ð¼Ð¸: " << listChetnie(list) << ", Ð½ÐµÑ‡ÐµÑ‚Ð½Ñ‹Ñ… Ð¿Ð¾Ð´ Ð½ÐµÑ‡ÐµÑ‚Ð½Ñ‹Ð¼Ð¸: " << listNechetnie(list);
 
 				start = steady_clock::now();
 
@@ -949,14 +949,14 @@ int main() {
 				arrayTime = duration_cast<nanoseconds>(end - start).count();
 
 				SetConsoleTextAttribute(handle, FOREGROUND_BLUE | FOREGROUND_GREEN);
-				cout << "\n\nÄëÿ äâóñâÿçíîãî ñïèñêà ýòà îïåðàöèÿ ïðîøëà çà " << listTime << " íàíîñåêóíä, äëÿ äèíàìè÷åñêîãî ìàññèâà ïîòðåáîâàëîñü áû " << arrayTime;
+				cout << "\n\nÐ”Ð»Ñ Ð´Ð²ÑƒÑÐ²ÑÐ·Ð½Ð¾Ð³Ð¾ ÑÐ¿Ð¸ÑÐºÐ° ÑÑ‚Ð° Ð¾Ð¿ÐµÑ€Ð°Ñ†Ð¸Ñ Ð¿Ñ€Ð¾ÑˆÐ»Ð° Ð·Ð° " << listTime << " Ð½Ð°Ð½Ð¾ÑÐµÐºÑƒÐ½Ð´, Ð´Ð»Ñ Ð´Ð¸Ð½Ð°Ð¼Ð¸Ñ‡ÐµÑÐºÐ¾Ð³Ð¾ Ð¼Ð°ÑÑÐ¸Ð²Ð° Ð¿Ð¾Ñ‚Ñ€ÐµÐ±Ð¾Ð²Ð°Ð»Ð¾ÑÑŒ Ð±Ñ‹ " << arrayTime;
 				SetConsoleTextAttribute(handle, FOREGROUND_BLUE | FOREGROUND_RED | FOREGROUND_GREEN);
 			}break;
 
 			case 7: {
 				delete[] arr;
 				deleteList(list);
-				cout << "\n\n\nÏîêà-ïîêà  :((((((\n\n\n";
+				cout << "\n\n\nÐŸÐ¾ÐºÐ°-Ð¿Ð¾ÐºÐ°  :((((((\n\n\n";
 				menuChoose = -1;
 			}break;
 		}
